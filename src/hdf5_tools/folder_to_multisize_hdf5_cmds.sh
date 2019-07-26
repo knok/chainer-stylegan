@@ -17,7 +17,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ROOT="$SCRIPT_DIR/../../data/"
 
 # Common hps across Experiments
-hps_config_common="--num_threads 8 --buffer_size_mb 8000"
+hps_config_common="--num_threads 2 --buffer_size_mb 1000"
 
 ################
 # Experiments #
@@ -26,7 +26,7 @@ hps_config_common="--num_threads 8 --buffer_size_mb 8000"
 if [ $EXPR_ID -ge 1 -a $EXPR_ID -le 1 ]; then
   declare -A _map=([1]=1024)
   image_size=${_map[$EXPR_ID]}
-  min_input_image_size=$((200))
+  min_input_image_size=$((20))
   echo "Case ${EXPR_ID}: FFHQ, multisize h5 with $image_size resolution."
 
   DATASET_DIR="$2"

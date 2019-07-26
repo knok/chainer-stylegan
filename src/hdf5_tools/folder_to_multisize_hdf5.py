@@ -197,7 +197,7 @@ gflags.DEFINE_string('folder_path', '', '')
 gflags.DEFINE_string('h5_filename', '', '')
 
 # hps: config
-gflags.DEFINE_integer('image_size', 1024, 'image sizes')
+gflags.DEFINE_integer('image_size', 128, 'image sizes')
 gflags.DEFINE_integer('min_input_image_size', -1, 'minimal input image sizes')
 gflags.DEFINE_integer('num_threads', 4, 'Number of concurrent threads')
 gflags.DEFINE_integer('num_tasks', 100 , 'Number of concurrent processing tasks')
