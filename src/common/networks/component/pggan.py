@@ -6,7 +6,7 @@ import chainer.links as L
 
 def feature_vector_normalization(x, eps=1e-8):
     # x: (B, C, H, W)
-    alpha = 1.0 / F.sqrt(F.mean(x * x, axis=1, keepdims=True) + eps)
+    alpha = F.rsqrt(F.mean(x * x, axis=1, keepdims=True) + eps)
     return F.broadcast_to(alpha, x.data.shape) * x
 
 
